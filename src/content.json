@@ -1,0 +1,41 @@
+{
+	"about": "Hi! I'm a recent Computer Science graduate from UC Davis with a strong passion for web development, particularly front-end and UI/UX design. I enjoy crafting intuitive and visually engaging user interfaces using HTML/CSS, JavaScript, and React. My goal is to create seamless and user-friendly web experiences that make a positive impact.",
+	"projects": [
+		{
+			"title": "Spotify Stats for Users",
+			"description": "A web app that connects with Spotify to showcase your top tracks and artists across different time ranges, offering a sleek and interactive way to explore your listening habits.",
+			"images": ["topartists.webp", "toptracks.webp"]
+		},
+		{
+			"title": "Blush and Bloom Cafe",
+			"description": "A sleek and modern coffee shop web app where users can browse the menu, add items to their cart, and complete purchases via Stripe. Customers receive order confirmations via email using the Resend API. Admins can securely log in to manage the menu, track inventory, view orders, analyze sales data, and monitor popular items",
+			"images": [
+				"homepage.webp",
+				"about.webp",
+				"menu.webp",
+				"cart.webp",
+				"checkout.webp",
+				"admindash.webp",
+				"adminproducts.webp",
+				"adminsales.webp"
+			]
+		}
+	],
+	"languages": ["Python", "JavaScript", "TypeScript", "HTML/CSS", "JSON"],
+	"frameworks": ["React", "Next.js", "Node.js", "Express.js", "Jest", "Tailwind CSS"],
+	"tools": ["PostgreSQL", "Prisma", "Figma", "Git", "Stripe", "VS Code"],
+	"experience": [
+		{
+			"job_title": "Code Coach",
+			"company": "theCoderSchool",
+			"location": "Walnut Creek, CA",
+			"timeline": "Aug 2024 - Present"
+		},
+		{
+			"job_title": "Temporary Worker",
+			"company": "Stanford University",
+			"location": "Stanford, CA",
+			"timeline": "July 2019 - Aug 2019"
+		}
+	]
+}
