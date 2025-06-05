@@ -24,6 +24,8 @@ export default {
 			colors: {
 				lightPurple: "#A29BFE",
 				darkPurple: "#6C4DFF",
+				hoverLightPurple: "#8E81F4",
+				hoverDarkPurple: "#5A3CE6",
 				background: "hsl(var(--background))",
 				foreground: "hsl(var(--foreground))",
 				card: {

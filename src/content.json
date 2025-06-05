@@ -3,12 +3,13 @@
 	"projects": [
 		{
 			"title": "Spotify Stats for Users",
-			"description": "A web app that connects with Spotify to showcase your top tracks and artists across different time ranges, offering a sleek and interactive way to explore your listening habits.",
-			"images": ["topartists.webp", "toptracks.webp"]
+			"description": "A dynamic web application that integrates with the Spotify Web API to display users' top tracks and artists across three distinct time ranges—past month, last 6 months, and all-time. The app features a clean, responsive UI and utilizes Spotify's PKCE authentication flow for secure login. Each track and artist links directly to Spotify, allowing users to revisit and share their favorite music. Designed for music lovers who want a visual and interactive way to explore their listening trends.",
+			"images": ["topartists.webp", "toptracks.webp"],
+			"link": "https://github.com/mgz11/statsspotify"
 		},
 		{
 			"title": "Blush and Bloom Cafe",
-			"description": "A sleek and modern coffee shop web app where users can browse the menu, add items to their cart, and complete purchases via Stripe. Customers receive order confirmations via email using the Resend API. Admins can securely log in to manage the menu, track inventory, view orders, analyze sales data, and monitor popular items",
+			"description": "A fully functional prototype for a modern café web app. Users can browse the menu, manage a cart, and complete purchases via Stripe. Customers receive order confirmations via the Resend API. Admins can securely log in to manage the menu, track inventory, view orders, and analyze sales data. Although the business no longer exists, the full prototype is available on GitHub.",
 			"images": [
 				"homepage.webp",
 				"about.webp",
@@ -18,7 +19,8 @@
 				"admindash.webp",
 				"adminproducts.webp",
 				"adminsales.webp"
-			]
+			],
+			"link": "https://github.com/mgz11/coffee-site"
 		}
 	],
 	"languages": ["Python", "JavaScript", "TypeScript", "HTML/CSS", "JSON"],

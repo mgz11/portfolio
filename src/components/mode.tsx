@@ -4,7 +4,7 @@ import { Moon } from "lucide-react";
 
 export default function Mode() {
 	const [darkMode, setDarkMode] = useState(() => {
-		// Optional: check localStorage or system preference
+		// Check localStorage or system preference
 		return localStorage.getItem("theme") === "dark";
 	});
 

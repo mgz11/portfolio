@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import content from "../content.json";
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "./ui/carousel";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Button } from "./ui/button";
 
 const project1_images = import.meta.glob("../assets/spotify-stats-screenshots/*.webp", { eager: true });
 const project2_images = import.meta.glob("../assets/coffee-site-screenshots/*.webp", { eager: true });
@@ -92,7 +93,7 @@ export default function BentoGrid() {
 					</div>
 					<div className="mb-4 border dark:border-white/[0.12] rounded-xl p-4 w-full dark:bg-white/[0.08] dark:shadow-glass border-white/[0.3] bg-white/[0.6] shadow-frosted">
 						<h2 className="mb-4 font-semibold text-base">About</h2>
-						<div>
+						<div className="text-left">
 							<p>{content.about}</p>
 						</div>
 					</div>
@@ -102,7 +103,7 @@ export default function BentoGrid() {
 					<div className="flex flex-col justify-center items-center xl:grid xl:grid-cols-2 sm:gap-6">
 						{/* Image carousel */}
 						<div className="flex justify-center max-w-sm">
-							<Carousel className="w-full max-w-s" setApi={setApi1}>
+							<Carousel className="w-full max-w-sm" setApi={setApi1}>
 								<CarouselContent>
 									{content.projects[0].images.map((imgName, index) => {
 										const imageKey = Object.keys(project1_images).find((key) =>
@@ -126,10 +127,10 @@ export default function BentoGrid() {
 										);
 									})}
 								</CarouselContent>
-								<div className="text-center text-sm text-muted-foreground flex gap-3 justify-center mb-3 items-center">
+								<div className="text-left text-sm text-muted-foreground flex gap-3 justify-center mb-3 items-center">
 									<ArrowLeft
 										onClick={() => api1?.scrollTo(current1 - 1)}
-										className={`transition active:scale-[0.85] duration-150 ease-in-out text-foreground ${
+										className={`cursor-pointer transition active:scale-[0.85] duration-150 ease-in-out text-foreground ${
 											current1 === 0 ? "opacity-30 pointer-events-none" : ""
 										}`}
 									/>
@@ -137,7 +138,7 @@ export default function BentoGrid() {
 										<button
 											key={i}
 											onClick={() => api1?.scrollTo(i)}
-											className={`block p-0 m-0 border-none w-2 h-2 rounded-full transition-transform ${
+											className={`focus:outline-none focus:ring-0 cursor-pointer block p-0 m-0 border-none w-2 h-2 rounded-full transition-transform ${
 												current1 === i ? "bg-black dark:bg-white scale-110" : "bg-muted-foreground opacity-50"
 											}`}
 											style={{
@@ -148,7 +149,7 @@ export default function BentoGrid() {
 									))}
 									<ArrowRight
 										onClick={() => api1?.scrollTo(current1 + 1)}
-										className={`transition active:scale-[0.85] duration-150 ease-in-out text-foreground ${
+										className={`cursor-pointer transition active:scale-[0.85] duration-150 ease-in-out text-foreground ${
 											current1 === content.projects[0].images.length - 1 ? "opacity-30 pointer-events-none" : ""
 										}`}
 									/>
@@ -157,8 +158,13 @@ export default function BentoGrid() {
 							</Carousel>
 						</div>
 						{/* Description */}
-						<div className="text-center sm:flex sm:flex-col sm:justify-center">
+						<div className="text-left flex flex-col items-center xl:items-start sm:justify-center gap-4">
 							<p>{content.projects[0].description}</p>
+							<Button asChild className="md:pr-16 md:pl-12 md:pt-6 md:pb-6 text-white hover:text-white text-center">
+								<a href={content.projects[0].link} target="_blank" rel="noopener noreferrer">
+									View on Github
+								</a>
+							</Button>
 						</div>
 					</div>
 				</div>
@@ -166,11 +172,11 @@ export default function BentoGrid() {
 			{/* Third Column */}
 			<div className="mb-4 border rounded-xl dark:border-white/[0.12] p-4 dark:bg-white/[0.08] dark:shadow-glass border-white/[0.3] bg-white/[0.6] shadow-frosted">
 				<div>
-					<div className="sm:flex sm:flex-col justify-center items-center sm:gap-4">
+					<div className="flex flex-col justify-center items-center sm:gap-4">
 						<h2 className="mb-4 font-semibold text-base">{content.projects[1].title}</h2>
 						{/* Image carousel */}
-						<div className="flex justify-center max-w-sm">
-							<Carousel className="w-full max-w-s" setApi={setApi2}>
+						<div className="w-full max-w-sm">
+							<Carousel className="w-full max-w-sm" setApi={setApi2}>
 								<CarouselContent>
 									{content.projects[1].images.map((imgName, index) => {
 										const imageKey = Object.keys(project2_images).find((key) =>
@@ -194,10 +200,10 @@ export default function BentoGrid() {
 										);
 									})}
 								</CarouselContent>
-								<div className="text-center text-sm text-muted-foreground flex gap-3 justify-center mb-3 items-center">
+								<div className="text-left text-sm text-muted-foreground flex gap-3 justify-center mb-3 items-center">
 									<ArrowLeft
 										onClick={() => api2?.scrollTo(current2 - 1)}
-										className={`transition active:scale-[0.85] duration-150 ease-in-out text-foreground ${
+										className={`cursor-pointer transition active:scale-[0.85] duration-150 ease-in-out text-foreground ${
 											current2 === 0 ? "opacity-30 pointer-events-none" : ""
 										}`}
 									/>
@@ -205,7 +211,7 @@ export default function BentoGrid() {
 										<button
 											key={i}
 											onClick={() => api2?.scrollTo(i)}
-											className={`block p-0 m-0 border-none w-2 h-2 rounded-full transition-transform ${
+											className={`focus:outline-none focus:ring-0 cursor-pointer block p-0 m-0 border-none w-2 h-2 rounded-full transition-transform ${
 												current2 === i ? "bg-black dark:bg-white scale-110" : "bg-muted-foreground opacity-50"
 											}`}
 											style={{
@@ -216,7 +222,7 @@ export default function BentoGrid() {
 									))}
 									<ArrowRight
 										onClick={() => api2?.scrollTo(current2 + 1)}
-										className={`transition active:scale-[0.85] duration-150 ease-in-out text-foreground ${
+										className={`cursor-pointer transition active:scale-[0.85] duration-150 ease-in-out text-foreground ${
 											current2 === content.projects[1].images.length - 1 ? "opacity-30 pointer-events-none" : ""
 										}`}
 									/>
@@ -224,8 +230,13 @@ export default function BentoGrid() {
 							</Carousel>
 						</div>
 						{/* Description */}
-						<div>
+						<div className="text-left flex flex-col items-center xl:items-start sm:justify-center gap-4">
 							<p>{content.projects[1].description}</p>
+							<Button asChild className="md:pr-16 md:pl-12 md:pt-6 md:pb-6 text-white hover:text-white text-center">
+								<a href={content.projects[1].link} target="_blank" rel="noopener noreferrer">
+									View on Github
+								</a>
+							</Button>
 						</div>
 					</div>
 				</div>
